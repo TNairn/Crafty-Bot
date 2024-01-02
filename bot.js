@@ -21,7 +21,7 @@ client.once(Events.ClientReady, readyDiscord);
 client.login(process.env.TOKEN);
 
 async function handleInteraction(interaction) {
-    if (interaction.isCommand()) return;
+    if (!interaction.isCommand()) return;
     if (interaction.commandName === "creep") {
         await creep.execute(interaction);
     }
