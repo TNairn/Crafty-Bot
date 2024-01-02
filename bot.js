@@ -9,8 +9,11 @@ const client = new Client({
 });
 
 function readyDiscord() {
-    console.log("!!! " + client.user.tag);
+    console.log("Ready! Logged in as " + client.user.tag);
 }
+
+client.once(Events.ClientReady, readyDiscord);
+client.login(process.env.TOKEN);
 
 async function handleInteraction(interaction) {
     if (!interaction.isCommand()) return;
@@ -18,9 +21,5 @@ async function handleInteraction(interaction) {
         await creep.execute(interaction);
     }
 }
-
-client.once(Events.ClientReady, readyDiscord);
-
-client.login(process.env.TOKEN);
 
 client.on(Events.InteractionCreate, handleInteraction);
