@@ -5,15 +5,5 @@ export const data = new SlashCommandBuilder()
     .setDescription("Display a creepy face.");
 
 export async function execute(interaction) {
-    await interaction.reply(
-        "⣤⣤⣤⣤⣤⠀⠀⠀⠀⣤⣤⣤⣤⣤\n" +
-            "⣿⣿⣿⣿⣿⠀⠀⠀⠀⣿⣿⣿⣿⣿\n" +
-            "⣿⣿⣿⣿⣿⠀⠀⠀⠀⣿⣿⣿⣿⣿\n" +
-            "⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀⠀\n" +
-            "⠀⠀⣶⣶⣶⣿⣿⣿⣿⣶⣶⣶⠀⠀\n" +
-            "⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀\n" +
-            "⠀⠀⣿⣿⣿⡏⠉⠉⢹⣿⣿⣿⠀⠀\n" +
-            "⠀⠀⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⠀⠀\n" +
-            "⠀⠀⠉⠉⠉⠁⠀⠀⠈⠉⠉⠉⠀⠀"
-    );
+    await interaction.reply("<:creeper:1191566770436329573>");
 }
