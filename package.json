@@ -1,13 +1,13 @@
 {
-  "name": "splash_discord_bot",
+  "name": "crafty-bot",
   "version": "1.0.0",
-  "description": "Searches a text channel and removes repeats",
+  "description": "Searches the history of a text channel and removes new messages that match old ones.",
   "main": "bot.js",
   "type": "module",
     "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Taylor",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.14.1",
