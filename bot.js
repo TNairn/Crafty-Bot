@@ -65,8 +65,7 @@ async function findMatch(message) {
 }
 
 client.on(Events.MessageCreate, async (message) => {
-    if (message.channel.name === "test") {
-        //eventually this channel should be splish-splash
+    if (message.channel.name === "splish-splash") {
         if (message.author.bot) {
             setTimeout(() => {
                 message.delete();
