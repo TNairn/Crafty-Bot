@@ -29,9 +29,11 @@ async function handleInteraction(interaction) {
 
 client.on(Events.InteractionCreate, handleInteraction);
 
-function findMessages(message) {
-    console.log("searching for a match: " + message);
-    return true;
+async function findMessages(message) {
+    const history = await message.channel.messages.fetch({
+        before: message.id,
+    });
+    return history.some((msg) => msg.content === message.content);
 }
 
 client.on(Events.MessageCreate, async (message) => {
@@ -40,11 +42,11 @@ client.on(Events.MessageCreate, async (message) => {
         if (message.author.bot) {
             setTimeout(() => {
                 message.delete();
-            }, 10000);
+            }, 8000);
             return;
         }
         //call function that searches the rest of the channel for a matching message
-        const match = findMessages(message.content);
+        const match = await findMessages(message);
         if (match) {
             message.delete();
             message.channel.send(
